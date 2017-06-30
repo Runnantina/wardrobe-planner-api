@@ -16,5 +16,6 @@ Why? Because most of us suffer from dementia when looking for what to wear for a
 4. Be able to delete and edit item information and collections.
 
 ![ad]("http://imgur.com/VVXC3ft")
+<p><img src="http://imgur.com/VVXC3ft.png" width="700" /></p>
 
 ![ad]("http://imgur.com/a/JN34n")
