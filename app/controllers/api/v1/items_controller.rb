@@ -15,6 +15,14 @@ class Api::V1::ItemsController < ApplicationController
     render json: item
   end
 
+  def search
+    tag = Tag.find(params['tag_id'])
+    p tag
+    items = tag.items
+    p items
+    render json: items
+  end
+
   def update
   end
 

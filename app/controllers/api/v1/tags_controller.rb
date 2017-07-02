@@ -11,8 +11,16 @@ class Api::V1::TagsController < ApplicationController
     render json: tag
   end
 
-  def show
-    # show item with associated tag
+  def search
+    # hit all of the item.image associated to searchTag
+    binding.pry
+    searchTag = Tag.find(params['id'])
+    if ItemTag.tag_id == Tag.id
+     render json: searchItem.image
+    else
+     puts "Nope, you don't have anything resembling this in your closet, time to go shopping."
+    end
+
   end
 
   def update
