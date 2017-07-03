@@ -12,15 +12,12 @@ class Api::V1::ItemsController < ApplicationController
 
   def show
     item = Item.find(params['id'])
-    render json: item
+    if item == null || undefined
+    puts "Nothing resembling this tag, permission granted to go shopping . . "
+    end
   end
 
   def search
-    tag = Tag.find(params['tag_id'])
-    p tag
-    items = tag.items
-    p items
-    render json: items
   end
 
   def update

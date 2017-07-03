@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :items
-      resources :tags, only: [:index, :search] do
-        get '/items' => 'items#search'
+      resources :tags, only: [:index, :search, :show] do
+        get '/items' => 'items#show'
       end
 
     end

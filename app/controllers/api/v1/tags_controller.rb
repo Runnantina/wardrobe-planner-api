@@ -1,6 +1,5 @@
 class Api::V1::TagsController < ApplicationController
 
-
   def index
     tags = Tag.all
     render json: tags
@@ -11,16 +10,13 @@ class Api::V1::TagsController < ApplicationController
     render json: tag
   end
 
-  def search
-    # hit all of the item.image associated to searchTag
-    binding.pry
-    searchTag = Tag.find(params['id'])
-    if ItemTag.tag_id == Tag.id
-     render json: searchItem.image
-    else
-     puts "Nope, you don't have anything resembling this in your closet, time to go shopping."
-    end
-
+  def show
+    # binding.pry
+    # tag = ItemTag.find(params['id'])
+    # if tag.tag_id == Tag.id
+    #   gh = Tag.id
+    #   render json: Item.find(gh) #finding object by Tag.id
+    # end
   end
 
   def update
