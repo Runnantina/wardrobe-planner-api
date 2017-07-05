@@ -11,12 +11,16 @@ class Api::V1::TagsController < ApplicationController
   end
 
   def show
-    # binding.pry
-    # tag = ItemTag.find(params['id'])
-    # if tag.tag_id == Tag.id
-    #   gh = Tag.id
-    #   render json: Item.find(gh) #finding object by Tag.id
-    # end
+    tag = Tag.find(params['id'])
+    render json: tag
+  end
+
+  def search
+    tag = Tag.find(params['tag_id'])
+    items = tag.items
+    render json: items
+    # gray.items.find_by(id:4).image
+    # items = gray.items
   end
 
   def update

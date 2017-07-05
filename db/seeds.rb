@@ -148,7 +148,7 @@ ItemTag.create(item_id: 1, tag_id: 60)
 
 ItemTag.create(item_id: 2, tag_id: 4)
 ItemTag.create(item_id: 2, tag_id: 63)
-ItemTag.create(item_id: 2, tag_id: 4)
+ItemTag.create(item_id: 2, tag_id: 47)
 
 ItemTag.create(item_id: 3, tag_id: 106)
 ItemTag.create(item_id: 3, tag_id: 63)

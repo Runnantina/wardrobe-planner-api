@@ -5,10 +5,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :items
       resources :tags, only: [:index, :search, :show] do
-        get '/items' => 'items#show'
+        get '/items' => 'tags#search'
       end
-
     end
   end
-
 end
