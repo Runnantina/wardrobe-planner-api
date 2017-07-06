@@ -6,7 +6,7 @@ class Api::V1::ItemsController < ApplicationController
   end
 
   def create
-    item = Item.create(item: params[:item])
+    item = Item.create(image: params['image'])
     render json: item
   end
 
@@ -27,5 +27,6 @@ class Api::V1::ItemsController < ApplicationController
 
   def delete
   end
+
 
 end
