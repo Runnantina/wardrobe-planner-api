@@ -6,9 +6,9 @@ class Api::V1::TagsController < ApplicationController
   end
 
   def create
-    tag = Tag.find_or_create_by(keyword: params['tag'])
+    tags = params['tags_arr'].split(" ").map{ |tag| Tag.find_or_create_by(keyword: tag) }
     item = Item.find_or_create_by(image: params['item_url'])
-    itemTag = ItemTag.create(tag_id: tag.id, item_id: item.id)
+    itemTag = tags.map{ |tag| ItemTag.create(tag_id: tag.id, item_id: item.id) }
     render json: itemTag
   end
 
@@ -27,8 +27,10 @@ class Api::V1::TagsController < ApplicationController
 
   end
 
-  def delete
-
+  def destroy
+    tag = Tag.find(id: params['tag_id'])
+    tag = tag.destroy
+    render json: tag
   end
 
 
