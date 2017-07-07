@@ -6,6 +6,7 @@ class Api::V1::ItemsController < ApplicationController
   end
 
   def create
+    binding.pry
     item = Item.create(image: params['image'])
     render json: item
   end

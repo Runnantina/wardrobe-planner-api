@@ -6,8 +6,10 @@ class Api::V1::TagsController < ApplicationController
   end
 
   def create
-    tag = Tag.create(keyword: params[:keyword])
-    render json: tag
+    tag = Tag.find_or_create_by(keyword: params['tag'])
+    item = Item.find_or_create_by(image: params['item_url'])
+    itemTag = ItemTag.create(tag_id: tag.id, item_id: item.id)
+    render json: itemTag
   end
 
   def show
@@ -19,8 +21,6 @@ class Api::V1::TagsController < ApplicationController
     tag = Tag.find(params['tag_id'])
     items = tag.items
     render json: items
-    # gray.items.find_by(id:4).image
-    # items = gray.items
   end
 
   def update
