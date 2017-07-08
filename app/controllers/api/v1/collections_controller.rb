@@ -6,7 +6,7 @@ class Api::V1::CollectionsController < ApplicationController
   end
 
   def create
-    collection = Collection.create(name: params[:name])
+    collection = Collection.create(name: params['name'])
     render json: collection
   end
 
@@ -16,7 +16,7 @@ class Api::V1::CollectionsController < ApplicationController
   def update
   end
 
-  def delete
+  def destroy
   end
 
 

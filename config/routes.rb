@@ -7,6 +7,8 @@ Rails.application.routes.draw do
       resources :tags, only: [:index, :search, :show, :create, :destroy] do
         get '/items' => 'tags#search'
       end
+      resources :collection_items
+      resources :collections, only: [:index, :create, :show, :destroy]
     end
   end
 end

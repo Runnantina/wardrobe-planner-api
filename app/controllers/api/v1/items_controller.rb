@@ -5,28 +5,13 @@ class Api::V1::ItemsController < ApplicationController
     render json: items
   end
 
-  def create
-    binding.pry
-    item = Item.create(image: params['image'])
-    render json: item
-  end
-
-  def show
-    # use this method after tag.items is found
-    #
-    item = Item.find(params['id'])
-    if item == null || undefined
-    puts "Nothing resembling this tag, time to go shopping . . "
-    end
-  end
-
-  def search
-  end
-
   def update
   end
 
-  def delete
+  def destroy
+    item = Item.find(params['id'])
+    item.destroy
+    render json: item
   end
 
 
