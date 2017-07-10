@@ -11,12 +11,15 @@ class Api::V1::CollectionsController < ApplicationController
   end
 
   def show
-  end
-
-  def update
+    # show each collection and its associated items INSIDE the collection
+    collection = Collection.find(params['id'])
+    items = collection.items
+    render json: items
   end
 
   def destroy
+    # when user deletes a collection, all associated Items are also deleted
+    # :dependent => :destroy took care of that
   end
 
 

@@ -13,6 +13,11 @@ c2 = Collection.create(name: "Wednesday Meeting")
 c3 = Collection.create(name: "Suz and Andy's Wedding")
 c4 = Collection.create(name: "Australian Winter")
 
+CollectionItem.create(collection_id: 1, item_id: 21)
+CollectionItem.create(collection_id: 1, item_id: 3)
+CollectionItem.create(collection_id: 1, item_id: 5)
+CollectionItem.create(collection_id: 1, item_id: 6)
+
 # textiles
 plaid = Tag.create(keyword: "plaid") #1
 stripes = Tag.create(keyword: "stripes") #2

@@ -5,7 +5,12 @@ class Api::V1::ItemsController < ApplicationController
     render json: items
   end
 
+  def edit
+    # 'GET'
+  end
+
   def update
+    # 'PUT' or 'PATCH'
   end
 
   def destroy

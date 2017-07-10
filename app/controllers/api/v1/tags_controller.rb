@@ -18,20 +18,19 @@ class Api::V1::TagsController < ApplicationController
   end
 
   def search
-    tag = Tag.find(params['tag_id'])
-    items = tag.items
+    tags = params['searchTags']
+    tag_ids = tags.map{|tag| Tag.find_by(keyword: tag).id}
+    item_tags = ItemTag.where(tag_id: tag_ids) # behavior of object being passed 
+    items = item_tags.map{|item_tag| Item.find(item_tag.item_id)}.uniq
     render json: items
   end
 
+  def edit
+  end
+
   def update
-
   end
 
-  def destroy
-    tag = Tag.find(id: params['tag_id'])
-    tag = tag.destroy
-    render json: tag
-  end
 
 
 end
