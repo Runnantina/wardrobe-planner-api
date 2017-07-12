@@ -20,7 +20,7 @@ class Api::V1::TagsController < ApplicationController
   def search
     tags = params['searchTags']
     tag_ids = tags.map{|tag| Tag.find_by(keyword: tag).id}
-    item_tags = ItemTag.where(tag_id: tag_ids) # behavior of object being passed 
+    item_tags = ItemTag.where(tag_id: tag_ids) # behavior of object being passed
     items = item_tags.map{|item_tag| Item.find(item_tag.item_id)}.uniq
     render json: items
   end

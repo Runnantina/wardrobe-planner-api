@@ -15,6 +15,8 @@ class Api::V1::ItemsController < ApplicationController
 
   def destroy
     item = Item.find(params['id'])
+    item_tags = item.item_tags
+    item_tags.destroy_all
     item.destroy
     render json: item
   end

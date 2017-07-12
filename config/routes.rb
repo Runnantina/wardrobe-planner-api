@@ -11,8 +11,8 @@ Rails.application.routes.draw do
       resources :collections, only: [:index, :create, :show, :destroy] do
         get '/items' => 'collections#showItems'
       end
-
       post '/tagitems' => 'tags#search'
+
     end
   end
 end
