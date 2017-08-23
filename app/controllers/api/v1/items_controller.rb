@@ -13,6 +13,11 @@ class Api::V1::ItemsController < ApplicationController
     # 'PUT' or 'PATCH'
   end
 
+  def show
+    item = Item.find(params['id'])
+    render json: item
+  end
+
   def destroy
     item = Item.find(params['id'])
     item_tags = item.item_tags
@@ -20,6 +25,8 @@ class Api::V1::ItemsController < ApplicationController
     item.destroy
     render json: item
   end
+
+  
 
 
 end

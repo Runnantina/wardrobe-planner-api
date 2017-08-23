@@ -25,12 +25,5 @@ class Api::V1::TagsController < ApplicationController
     render json: items
   end
 
-  def edit
-  end
-
-  def update
-  end
-
-
 
 end
