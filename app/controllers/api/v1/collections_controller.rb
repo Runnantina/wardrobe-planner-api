@@ -6,7 +6,7 @@ class Api::V1::CollectionsController < ApplicationController
   end
 
   def create
-    collection = Collection.create(name: params['name'])
+    collection = Collection.find_or_create_by(name: params['name'])
     render json: collection
   end
 

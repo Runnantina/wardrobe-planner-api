@@ -5,14 +5,6 @@ class Api::V1::ItemsController < ApplicationController
     render json: items
   end
 
-  def edit
-    # 'GET'
-  end
-
-  def update
-    # 'PUT' or 'PATCH'
-  end
-
   def show
     item = Item.find(params['id'])
     render json: item
@@ -26,7 +18,7 @@ class Api::V1::ItemsController < ApplicationController
     render json: item
   end
 
-  
+
 
 
 end
