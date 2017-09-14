@@ -7,11 +7,11 @@ class Api::V1::CollectionsController < ApplicationController
 
   def create
     collection = Collection.find_or_create_by(name: params['name'])
+    byebug
     render json: collection
   end
 
   def show
-    # items = Item.joins("collection_items where item_id = items.id and collection_id = ?", params[:id]).select(:image)
     collection = Collection.find(params[:id])
     render json: collection
   end
