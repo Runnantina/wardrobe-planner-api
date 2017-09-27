@@ -19,8 +19,6 @@ class Api::V1::CollectionItemsController < ApplicationController
 
   def destroy
     collectionItem = CollectionItem.find_by(collection_id: params['collection_id'], item_id: params['item_id'] )
-    # Collection.find(4).collection_items.find_by(item_id:7 ).destroy
-    # Item.find(17).collection_items.find_by(collection_id:4).destroy
     collectionItem.destroy
   end
 
